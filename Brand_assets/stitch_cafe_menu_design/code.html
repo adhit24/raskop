@@ -1,0 +1,210 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>rasa kopi - coffee series</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1b1c1a",
+                        "surface-dim": "#dbdad6",
+                        "surface-bright": "#fbf9f5",
+                        "secondary-fixed": "#ffdcc6",
+                        "tertiary-container": "#00401d",
+                        "on-tertiary-fixed": "#00210c",
+                        "tertiary-fixed": "#6dfe9c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed-variant": "#5f402a",
+                        "inverse-surface": "#30312e",
+                        "surface-container-highest": "#e4e2de",
+                        "error-container": "#ffdad6",
+                        "surface": "#fbf9f5",
+                        "primary": "#01261f",
+                        "on-surface-variant": "#414846",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#eabda0",
+                        "secondary-container": "#ffd1b3",
+                        "surface-tint": "#43655c",
+                        "primary-container": "#1a3c34",
+                        "outline-variant": "#c1c8c4",
+                        "on-primary-fixed": "#00201a",
+                        "surface-container-low": "#f5f3ef",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0ed",
+                        "primary-fixed-dim": "#aacec3",
+                        "primary-fixed": "#c5eadf",
+                        "on-tertiary-fixed-variant": "#005227",
+                        "on-primary-container": "#83a69c",
+                        "inverse-primary": "#aacec3",
+                        "tertiary": "#00280f",
+                        "tertiary-fixed-dim": "#4de082",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eae8e4",
+                        "on-tertiary-container": "#03b75f",
+                        "on-secondary-container": "#7a5840",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#79573f",
+                        "on-primary-fixed-variant": "#2b4d44",
+                        "on-secondary-fixed": "#2d1604",
+                        "background": "#fbf9f5",
+                        "on-surface": "#1b1c1a",
+                        "surface-container": "#efeeea",
+                        "on-secondary": "#ffffff",
+                        "outline": "#717976",
+                        "surface-variant": "#e4e2de"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .lowercase-header { text-transform: lowercase; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Web) -->
+<nav class="hidden md:flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto bg-[#fbf9f5] dark:bg-stone-950 docked full-width top-0 sticky z-50 bg-[#f5f3ef] dark:bg-stone-900 flat no shadows text-[#1a3c34] dark:text-emerald-500 font-headline lowercase tracking-tight font-bold">
+<div class="text-2xl font-bold text-[#1a3c34] dark:text-emerald-500 lowercase" style="">rasa kopi</div>
+<div class="flex gap-8">
+<a class="text-[#1a3c34] dark:text-emerald-400 border-b-2 border-[#1a3c34] dark:border-emerald-400 pb-1 hover:text-[#1a3c34] dark:hover:text-emerald-300 transition-colors" href="#" style="">coffee</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1a3c34] dark:hover:text-emerald-300 transition-colors" href="#" style="">non-coffee</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1a3c34] dark:hover:text-emerald-300 transition-colors" href="#" style="">mocktails</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1a3c34] dark:hover:text-emerald-300 transition-colors" href="#" style="">main course</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#1a3c34] dark:hover:text-emerald-300 transition-colors" href="#" style="">snacks</a>
+</div>
+<div class="flex items-center">
+<span class="material-symbols-outlined hover:text-[#1a3c34] dark:hover:text-emerald-300 transition-colors cursor-pointer" data-icon="shopping_bag" style="">shopping_bag</span>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-32 md:pb-24">
+<!-- Header Section -->
+<header class="mb-12 md:mb-16">
+<h1 class="font-headline text-5xl md:text-6xl font-bold text-primary tracking-tighter lowercase-header mb-4" style="">coffee series</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl" style="">our carefully curated selection of espresso-based drinks, crafted to bring out the honest, rich flavors of our beans.</p>
+</header>
+<!-- Bento Grid Layout for Menu -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-min">
+<!-- Hero Signature Card (Takes up more space) -->
+<article class="md:col-span-8 bg-surface-container-low rounded-xl overflow-hidden relative flex flex-col md:flex-row shadow-sm hover:shadow-md transition-shadow">
+<div class="w-full md:w-1/2 h-64 md:h-auto relative">
+<img alt="Iced palm sugar latte in a glass with a creamy layer on top, sitting on a warm wooden table with soft natural light" class="w-full h-full object-cover absolute inset-0" data-alt="Iced palm sugar latte in a glass with a creamy layer on top, sitting on a warm wooden table with soft natural light" src="https://i.postimg.cc/W1G54pQN/A-cup-of-coffee-latte.jpg" style="">
+</div>
+<div class="p-8 md:p-10 flex flex-col justify-center w-full md:w-1/2 bg-surface-container-lowest z-10">
+<div class="flex justify-between items-start mb-4">
+<h2 class="font-headline text-2xl font-bold text-primary lowercase-header" style="">Rasa Kopi (Gula Aren)</h2>
+<span class="font-label text-lg font-medium text-secondary" style="">20k</span>
+</div>
+<p class="font-body text-on-surface-variant mb-8" style="">Our signature palm sugar latte. Perfectly creamy.</p>
+<div class="mt-auto">
+<button class="bg-primary text-on-primary rounded-full px-6 py-3 font-body font-medium lowercase hover:bg-primary-container transition-colors w-full md:w-auto inline-flex items-center justify-center gap-2" style="">
+<span class="" style="">add to order</span>
+<span class="material-symbols-outlined text-sm" data-icon="add" style="">add</span>
+</button>
+</div>
+<!-- Signature Badge -->
+<div class="absolute top-4 left-4 md:left-auto md:right-4 md:top-4 bg-primary-container text-tertiary-fixed-dim rounded-full px-4 py-1 text-xs font-headline font-bold tracking-wider lowercase" style="">signature</div>
+</div>
+</article>
+<!-- Regular Items Grid -->
+<article class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline text-xl font-bold text-primary lowercase-header" style="">Caramel</h3>
+<span class="font-label text-base font-medium text-secondary" style="">22k</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-6 ml-6" style="">Sweet, smooth, and aromatic.</p>
+<div class="flex justify-end">
+<button aria-label="Add Caramel to order" class="text-primary hover:bg-surface-container-high rounded-full p-2 transition-colors flex items-center justify-center" style="">
+<span class="material-symbols-outlined" data-icon="add_circle" style="">add_circle</span>
+</button>
+</div>
+</article>
+<article class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline text-xl font-bold text-primary lowercase-header" style="">Americano</h3>
+<span class="font-label text-base font-medium text-secondary" style="">18k</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-6 ml-6" style="">Bold and pure espresso.</p>
+<div class="flex justify-end">
+<button aria-label="Add Americano to order" class="text-primary hover:bg-surface-container-high rounded-full p-2 transition-colors flex items-center justify-center" style="">
+<span class="material-symbols-outlined" data-icon="add_circle" style="">add_circle</span>
+</button>
+</div>
+</article>
+<article class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-colors relative overflow-hidden">
+<div class="absolute -right-4 -top-4 w-16 h-16 bg-surface-container-high rounded-full opacity-50 blur-xl"></div>
+<div class="flex justify-between items-start mb-3 relative z-10">
+<h3 class="font-headline text-xl font-bold text-primary lowercase-header pr-4" style="">Americano Blackcurrant</h3>
+<span class="font-label text-base font-medium text-secondary" style="">20k</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-6 ml-6 relative z-10" style="">A refreshing berry coffee twist.</p>
+<div class="flex justify-end relative z-10">
+<button aria-label="Add Americano Blackcurrant to order" class="text-primary hover:bg-surface-container-high rounded-full p-2 transition-colors flex items-center justify-center" style="">
+<span class="material-symbols-outlined" data-icon="add_circle" style="">add_circle</span>
+</button>
+</div>
+</article>
+<article class="md:col-span-4 bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-colors">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline text-xl font-bold text-primary lowercase-header pr-4" style="">Americano Peach</h3>
+<span class="font-label text-base font-medium text-secondary" style="">20k</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-6 ml-6" style="">Fruity and bright coffee blend.</p>
+<div class="flex justify-end">
+<button aria-label="Add Americano Peach to order" class="text-primary hover:bg-surface-container-high rounded-full p-2 transition-colors flex items-center justify-center" style="">
+<span class="material-symbols-outlined" data-icon="add_circle" style="">add_circle</span>
+</button>
+</div>
+</article>
+<article class="md:col-span-4 md:col-start-5 bg-surface-container-lowest rounded-xl p-6 hover:bg-surface-container-low transition-colors relative">
+<div class="flex justify-between items-start mb-3">
+<h3 class="font-headline text-xl font-bold text-primary lowercase-header" style="">Cream Cheese</h3>
+<span class="font-label text-base font-medium text-secondary" style="">24k</span>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-6 ml-6" style="">Latte topped with savory cheese foam.</p>
+<div class="flex justify-end">
+<button aria-label="Add Cream Cheese to order" class="text-primary hover:bg-surface-container-high rounded-full p-2 transition-colors flex items-center justify-center" style="">
+<span class="material-symbols-outlined" data-icon="add_circle" style="">add_circle</span>
+</button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden bg-[#fbf9f5]/80 dark:bg-stone-950/80 backdrop-blur-md fixed bottom-0 w-full z-50 rounded-t-[2rem] tonal shift using bg-[#f5f3ef] dark:bg-stone-900 shadow-[0_-8px_24px_rgba(27,28,26,0.04)] fixed bottom-0 left-0 w-full flex justify-around items-end px-4 pb-6 pt-2 font-['Inter'] text-[10px] uppercase tracking-widest font-medium text-[#1a3c34] dark:text-emerald-500">
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:bg-[#eae8e4] dark:hover:bg-stone-800 rounded-full transition-all w-12 h-12 mb-2" href="#" style="">
+<span class="material-symbols-outlined text-xl mb-1" data-icon="home" style="">home</span>
+<span class="sr-only" style="">home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#1a3c34] text-white dark:bg-emerald-600 rounded-full w-12 h-12 mb-2 scale-90 duration-200" href="#" style="">
+<span class="material-symbols-outlined text-xl mb-1" data-icon="menu_book" style="">menu_book</span>
+<span class="sr-only" style="">menu</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:bg-[#eae8e4] dark:hover:bg-stone-800 rounded-full transition-all w-12 h-12 mb-2" href="#" style="">
+<span class="material-symbols-outlined text-xl mb-1" data-icon="receipt_long" style="">receipt_long</span>
+<span class="sr-only" style="">orders</span>
+</a>
+<a class="flex flex-col items-center justify-center text-stone-400 dark:text-stone-600 hover:bg-[#eae8e4] dark:hover:bg-stone-800 rounded-full transition-all w-12 h-12 mb-2" href="#" style="">
+<span class="material-symbols-outlined text-xl mb-1" data-icon="person" style="">person</span>
+<span class="sr-only" style="">profile</span>
+</a>
+</nav>
+</body></html>

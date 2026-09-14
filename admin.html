@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Admin Dashboard — Raskop</title>
+  <link rel="icon" type="image/x-icon" href="Brand_assets/ico/raskop-favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="Brand_assets/ico/raskop-favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Brand_assets/ico/raskop-favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="Brand_assets/ico/raskop-favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="Brand_assets/ico/raskop-favicon-192x192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fraunces:ital,wght@0,400;0,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+
+  <!-- ===== PASSWORD GATE ===== -->
+  <div class="admin-gate" id="admin-gate">
+    <img src="Brand_assets/Logo raskop.png" alt="Raskop" class="admin-gate-logo" />
+    <div class="admin-gate-title">ADMIN DASHBOARD</div>
+    <div class="admin-gate-sub">Login dengan password admin</div>
+    <div class="admin-gate-form">
+      <input class="form-input" type="password" id="gate-password" placeholder="Password admin..." autocomplete="current-password" />
+      <button class="btn btn-primary" id="gate-submit" type="button" style="width:100%;">Masuk</button>
+      <p class="admin-gate-error" id="gate-error"></p>
+    </div>
+    <p style="margin-top:24px;font-size:.78rem;color:var(--muted-2);">
+      <a href="index.html" style="color:var(--muted);text-decoration:underline;">← Kembali ke Beranda</a>
+    </p>
+  </div>
+
+  <!-- ===== ADMIN HEADER ===== -->
+  <header class="admin-header">
+    <div class="admin-header-left">
+      <img src="Brand_assets/Logo raskop.png" alt="Raskop" class="admin-header-logo" />
+      <span class="admin-header-title">ADMIN DASHBOARD</span>
+      <span class="admin-header-badge">RASKOP</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="font-size:.78rem;color:var(--muted);" id="last-refresh">—</span>
+      <button class="admin-logout" id="admin-logout">Logout</button>
+    </div>
+  </header>
+
+  <!-- ===== STATS ROW ===== -->
+  <div class="admin-stats" id="admin-stats">
+    <div class="admin-stat pending-stat">
+      <div class="admin-stat-num" id="stat-pending">0</div>
+      <div class="admin-stat-label">Menunggu Konfirmasi</div>
+    </div>
+    <div class="admin-stat confirmed-stat">
+      <div class="admin-stat-num" id="stat-confirmed">0</div>
+      <div class="admin-stat-label">Dikonfirmasi Hari Ini</div>
+    </div>
+    <div class="admin-stat rejected-stat">
+      <div class="admin-stat-num" id="stat-rejected">0</div>
+      <div class="admin-stat-label">Ditolak</div>
+    </div>
+    <div class="admin-stat">
+      <div class="admin-stat-num" id="stat-total">0</div>
+      <div class="admin-stat-label">Total Reservasi</div>
+    </div>
+    <!-- Quota mini widget -->
+    <div class="admin-quota-bar-wrap">
+      <div class="admin-quota-label">Kuota Hari Ini</div>
+      <div class="admin-quota-bar">
+        <div class="admin-quota-fill" id="admin-quota-fill" style="width:0%"></div>
+      </div>
+      <div class="admin-quota-meta" id="admin-quota-meta">Memuat...</div>
+    </div>
+  </div>
+
+  <!-- ===== TABS ===== -->
+  <div class="admin-tabs-bar">
+    <button class="admin-tab active" data-tab="pending"  >
+      Menunggu <span class="admin-tab-count" id="tc-pending">0</span>
+    </button>
+    <button class="admin-tab" data-tab="confirmed">
+      Dikonfirmasi <span class="admin-tab-count" id="tc-confirmed" style="background:var(--success);color:var(--black);">0</span>
+    </button>
+    <button class="admin-tab" data-tab="rejected">
+      Ditolak <span class="admin-tab-count" id="tc-rejected" style="background:var(--red);color:var(--white);">0</span>
+    </button>
+    <button class="admin-tab" data-tab="all">Semua</button>
+    <button class="admin-tab" data-tab="crm">👥 CRM Pelanggan</button>
+    <button class="admin-tab" data-tab="slots">🕐 Slot Manager</button>
+  </div>
+
+  <!-- ===== TOOLBAR ===== -->
+  <div class="admin-toolbar">
+    <input class="admin-search" type="search" id="admin-search" placeholder="🔍 Cari nama, ID, atau no. HP..." />
+    <input class="admin-date-filter" type="date" id="admin-date" title="Filter tanggal" />
+    <button class="admin-refresh" id="admin-refresh">🔄 Refresh</button>
+    <a href="index.html" style="font-size:.8rem;color:var(--muted);white-space:nowrap;">← Beranda</a>
+  </div>
+
+  <!-- ===== RESERVATION PANELS ===== -->
+  <div class="admin-content">
+    <div class="admin-panel active" id="panel-pending"  ></div>
+    <div class="admin-panel"        id="panel-confirmed"></div>
+    <div class="admin-panel"        id="panel-rejected" ></div>
+    <div class="admin-panel"        id="panel-all"      ></div>
+    <div class="admin-panel"        id="panel-crm"      ></div>
+    <div class="admin-panel"        id="panel-slots"    ></div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

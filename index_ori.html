@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rasa Kopi (Raskop) — Coffee & Space di Bandung. Reservasi tempat duduk langsung dari website, pilih menu, dan nikmati pengalaman nongkrong yang worth it!" />
+  <title>Raskop — Coffee & Space | Reservasi Online</title>
+  <link rel="icon" type="image/x-icon" href="Brand_assets/ico/raskop-favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="Brand_assets/ico/raskop-favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="Brand_assets/ico/raskop-favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="Brand_assets/ico/raskop-favicon-96x96.png" />
+  <link rel="apple-touch-icon" sizes="192x192" href="Brand_assets/ico/raskop-favicon-192x192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="Brand_assets/Logo raskop.png" alt="Raskop" class="logo-img" />
+        <span class="nav-brand">RASA KOPI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#cara-reservasi" class="nav-link">Cara Reservasi</a></li>
+        <li><a href="#kenapa" class="nav-link">Kenapa Raskop</a></li>
+        <li><a href="#area" class="nav-link">Area</a></li>
+        <li><a href="menu.html" class="nav-link">Menu</a></li>
+        <li><a href="#testimoni" class="nav-link">Cerita</a></li>
+      </ul>
+      <a href="reservasi.html" class="btn btn-nav" id="nav-cta">Reservasi</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <ul>
+      <li><a href="#cara-reservasi" class="mobile-link">Cara Reservasi</a></li>
+      <li><a href="#kenapa" class="mobile-link">Kenapa Raskop</a></li>
+      <li><a href="#area" class="mobile-link">Area</a></li>
+      <li><a href="menu.html" class="mobile-link">Menu</a></li>
+      <li><a href="#testimoni" class="mobile-link">Cerita</a></li>
+    </ul>
+    <a href="reservasi.html" class="btn btn-primary mobile-cta-btn">Reservasi Sekarang</a>
+  </div>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="Brand_assets/Asset12.JPG" alt="Raskop Interior" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content container">
+      <div class="hero-eyebrow">
+        <span class="badge-dot"></span>
+        <span>Coffee &amp; Space · Bandung · Reservasi Online</span>
+      </div>
+
+      <h1 class="hero-title">
+        Tempat Buat<br />
+        <em class="hero-accent">Ngopi, Belajar,</em><br />
+        &amp; Nongkrong
+      </h1>
+
+      <div class="hero-bottom-row">
+        <div class="hero-left-col">
+          <p class="hero-sub">
+            Reservasi tempat dudukmu langsung dari sini — pilih area, pesan menu, dan datang tanpa drama. Kuota terbatas, jangan sampai ketinggalan.
+          </p>
+          <div class="hero-actions">
+            <a href="reservasi.html" class="btn btn-primary btn-lg">
+              📋 Reservasi Sekarang
+            </a>
+            <a href="#cara-reservasi" class="btn btn-ghost btn-lg">Gimana caranya? ↓</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><span class="stat-num">500+</span><span class="stat-lbl">Pengunjung/Bulan</span></div>
+            <div class="stat-div"></div>
+            <div class="stat"><span class="stat-num">09 AM</span><span class="stat-lbl">Buka Sampai 12 AM</span></div>
+            <div class="stat-div"></div>
+            <div class="stat"><span class="stat-num">4.9 ⭐</span><span class="stat-lbl">Rating Google</span></div>
+          </div>
+        </div>
+
+        <div class="hero-right-col">
+          <div class="hero-quota-card" id="hero-quota">
+            <div class="quota-header">
+              <span class="quota-label">⚡ Kuota Reservasi Hari Ini</span>
+              <span class="quota-badge" id="quota-badge-hero">Memuat...</span>
+            </div>
+            <div class="quota-bar-wrap">
+              <div class="quota-bar">
+                <div class="quota-fill" id="hero-fill" style="width:0%"></div>
+              </div>
+              <span class="quota-pct" id="hero-pct">0%</span>
+            </div>
+            <p class="quota-sub" id="hero-quota-sub">Memuat status kuota...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#cara-reservasi" class="scroll-down" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <section class="howto" id="cara-reservasi">
+    <div class="container">
+      <div class="sec-label-row">
+        <span class="sec-number">01</span>
+        <span class="section-tag">CARA RESERVASI</span>
+      </div>
+      <h2 class="section-title">Reservasi dalam<br /><em>Kurang dari 1 Menit</em></h2>
+      <p class="section-sub">Tanpa akun, tanpa antrian, tanpa ribet. Isi form → pilih menu → submit. Selesai.</p>
+
+      <div class="howto-steps">
+        <div class="howto-step anim-up">
+          <div class="step-num2">LANGKAH 1</div>
+          <div class="step-circle">📋</div>
+          <div class="step-title">Isi Info Diri</div>
+          <div class="step-desc">Nama, nomor HP, tanggal, jam, dan pilih area favoritmu.</div>
+        </div>
+        <div class="howto-step anim-up">
+          <div class="step-num2">LANGKAH 2</div>
+          <div class="step-circle">🍽️</div>
+          <div class="step-title">Pre-Order Menu</div>
+          <div class="step-desc">Pilih minimal 1 menu per orang. Harga dikalkulasi otomatis.</div>
+        </div>
+        <div class="howto-step anim-up">
+          <div class="step-num2">LANGKAH 3</div>
+          <div class="step-circle">💳</div>
+          <div class="step-title">Pilih Cara Bayar</div>
+          <div class="step-desc">QRIS atau Bank Transfer. Pembayaran dikonfirmasi saat datang.</div>
+        </div>
+        <div class="howto-step anim-up">
+          <div class="step-num2">LANGKAH 4</div>
+          <div class="step-circle">✅</div>
+          <div class="step-title">Tunggu Konfirmasi</div>
+          <div class="step-desc">Admin konfirmasi dalam 30 menit. Notifikasi dikirim ke WA-mu.</div>
+        </div>
+      </div>
+
+      <div class="progress-section anim-up" id="progress-section">
+        <div class="progress-header">
+          <div>
+            <h3 class="progress-title">Status Kuota Reservasi</h3>
+            <p class="progress-date" id="progress-date">Memuat...</p>
+          </div>
+          <div><span class="urgency-badge" id="urgency-badge">🔥 HAMPIR PENUH</span></div>
+        </div>
+        <div class="big-progress-bar">
+          <div class="big-progress-fill" id="main-fill" style="width:0%">
+            <span class="fill-label" id="fill-label">0%</span>
+          </div>
+          <div class="walk-in-zone"><span class="walk-in-label">WALK-IN ZONE</span></div>
+        </div>
+        <div class="progress-meta">
+          <span class="meta-filled"><span id="filled-count">0</span> tamu terisi</span>
+          <span class="meta-sep">·</span>
+          <span><span id="left-count">0</span> kursi reservasi tersisa</span>
+        </div>
+        <div class="progress-cta">
+          <p class="progress-cta-text">Jangan tunggu sampai list dikunci!</p>
+          <a href="reservasi.html" class="btn btn-primary">📋 Reservasi Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sistem" id="sistem">
+    <div class="container">
+      <div class="sec-label-row">
+        <span class="sec-number">02</span>
+        <span class="section-tag">SISTEM KUOTA</span>
+      </div>
+      <h2 class="section-title">Kenapa Harus<br /><em>Reservasi Dulu?</em></h2>
+
+      <div class="sistem-grid">
+        <div class="step-card anim-up">
+          <div class="step-num">1</div>
+          <div class="step-icon">🔒</div>
+          <h3>Tempat Dijamin</h3>
+          <p>70% kursi dikunci untuk yang sudah reservasi. Kalau udah konfirmasi, tempat kamu aman 100%.</p>
+        </div>
+        <div class="step-card anim-up">
+          <div class="step-num">2</div>
+          <div class="step-icon">⏰</div>
+          <h3>Toleransi 15 Menit</h3>
+          <p>Terlambat sedikit? Tenang, kami kasih toleransi 15 menit. Lebih dari itu, slot bisa diberikan ke walk-in.</p>
+        </div>
+        <div class="step-card anim-up">
+          <div class="step-num">3</div>
+          <div class="step-icon">🍽️</div>
+          <h3>Minimal 1 Order</h3>
+          <p>Setiap orang wajib pre-order minimal 1 item menu. Biar kami bisa siapkan semua dengan rapih sebelum kamu tiba.</p>
+        </div>
+      </div>
+
+      <div class="rule-card anim-up">
+        <div class="rule-left">
+          <div class="rule-title">Aturan 70/30 Raskop</div>
+          <p class="rule-desc">Dari total kursi yang tersedia, <strong>70% untuk reservasi</strong> dan <strong>30% untuk walk-in</strong>. Setelah kuota 70% penuh, list reservasi langsung dikunci.</p>
+          <p class="rule-note">⚠️ Kuota cepat habis di weekday. Selalu reservasi duluan untuk ketenangan pikiran.</p>
+        </div>
+        <div class="rule-right">
+          <div class="rule-donut-wrap">
+            <svg class="rule-donut" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#1a1a1a" stroke-width="18"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#E08756" stroke-width="18"
+                stroke-dasharray="220 314" stroke-dashoffset="78.5"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#164138" stroke-width="18"
+                stroke-dasharray="94 314" stroke-dashoffset="-141.5"/>
+            </svg>
+            <div class="donut-legend">
+              <div><span class="legend-dot" style="background:#E08756"></span>70% Reservasi</div>
+              <div><span class="legend-dot" style="background:#164138"></span>30% Walk-in</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kenapa" id="kenapa">
+    <div class="container">
+      <div class="sec-label-row">
+        <span class="sec-number">03</span>
+        <span class="section-tag">KENAPA RASKOP</span>
+      </div>
+      <h2 class="section-title">Bukan Cuma Kafe.<br /><em>Ini Basecamp-mu.</em></h2>
+      <div class="kenapa-grid">
+        <div class="kenapa-card anim-up">
+          <div class="kenapa-icon">☕</div>
+          <h3>Kopi yang Honest</h3>
+          <p>Dari biji pilihan, diseduh dengan teknik beneran. Nggak ada rasa yang dibuat-buat.</p>
+        </div>
+        <div class="kenapa-card anim-up">
+          <div class="kenapa-icon">📶</div>
+          <h3>WiFi Ngebut</h3>
+          <p>Kerjain tugas, meeting zoom, upload konten — semua mulus tanpa gangguan.</p>
+        </div>
+        <div class="kenapa-card anim-up">
+          <div class="kenapa-icon">🎛️</div>
+          <h3>Vibe yang Beda</h3>
+          <p>Homey yang bikin fokus tapi tetap cozy. Instagrammable tapi nggak lebay.</p>
+        </div>
+        <div class="kenapa-card anim-up">
+          <div class="kenapa-icon">🤝</div>
+          <h3>Komunitas Aktif</h3>
+          <p>TelYu Community Hub, diskusi komunitas, koneksi genuine. Ketemu orang-orang sefrekuensi. Buat dramaMu disini!</p>
+        </div>
+        <div class="kenapa-card anim-up">
+          <div class="kenapa-icon">💰</div>
+          <h3>Harga Mahasiswa</h3>
+          <p>Kualitas premium, harga yang nggak bikin kantong jebol. Produktif nggak harus mahal.</p>
+        </div>
+        <div class="kenapa-card anim-up">
+          <div class="kenapa-icon">🌿</div>
+          <h3>Kenang Masanya</h3>
+          <p>Pelanggan kami balik lagi bukan karena tren. Karena di sini terasa seperti rumah kedua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="area" id="area">
+    <div class="container">
+      <div class="sec-label-row">
+        <span class="sec-number">04</span>
+        <span class="section-tag">AREA & SUASANA</span>
+      </div>
+      <h2 class="section-title">Pilih Spot<br /><em>Favoritmu</em></h2>
+      <p class="section-sub">Dari indoor dengan nuansa warm, sampai outdoor sambil angin-anginan.</p>
+      <div class="area-info-grid">
+        <div class="area-info-card anim-up">
+          <div class="area-info-icon">🏠</div>
+          <h3 class="area-info-title">Indoor</h3>
+          <p class="area-info-desc">Ruangan luas, lesehan, private. Vibes-nya cozy banget — masuk langsung pengen rebahan sambil ngopi seharian.</p>
+        </div>
+        <div class="area-info-card anim-up">
+          <div class="area-info-icon">🌿</div>
+          <h3 class="area-info-title">Outdoor</h3>
+          <p class="area-info-desc">Nuansa open air dengan string light yang bikin malam makin magical bareng kawanmu. Cocok buat santai dan ngobrol.</p>
+        </div>
+        <div class="area-info-card anim-up">
+          <div class="area-info-icon">📚</div>
+          <h3 class="area-info-title">Study Zone</h3>
+          <p class="area-info-desc">Meja panjang, colokan banyak, suasana kondusif buat ngerjain skripsi atau deadline apapun. Deep work mode on.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MENU TEASER ─── -->
+  <section style="padding:72px 0 0;">
+    <div class="container">
+      <div style="
+        background: var(--dark-2);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 20px;
+        padding: 48px 52px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+        position: relative;
+        overflow: hidden;
+      ">
+        <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(22,65,56,0.4) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="position:relative;z-index:1;">
+          <span style="font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:12px;">☕ MENU RASKOP</span>
+          <h2 style="font-family:var(--font-serif);font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:900;color:var(--white);line-height:1.15;margin-bottom:10px;">Kopi, Non-Kopi, Mocktail<br /><em style="color:var(--amber);font-style:italic;">&amp; Makanan</em></h2>
+          <p style="color:var(--muted);font-size:0.9rem;line-height:1.7;max-width:380px;">24+ pilihan menu — dari americano klasik sampai mocktail signature. Pre-order langsung saat reservasi.</p>
+        </div>
+        <div style="flex-shrink:0;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:12px;">
+          <a href="menu.html" class="btn btn-primary btn-lg">🍽️ Lihat Menu Lengkap</a>
+          <span style="font-family:var(--font-mono);font-size:10px;color:var(--muted-2);letter-spacing:0.5px;">mulai Rp 12.000</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimoni" id="testimoni">
+    <div class="container">
+      <div class="sec-label-row">
+        <span class="sec-number">05</span>
+        <span class="section-tag">GALERI FOTO</span>
+      </div>
+      <h2 class="section-title">Suasana<br /><em>Raskop</em></h2>
+      <div class="carousel-outer">
+        <button class="carousel-btn" id="gallery-prev" aria-label="Sebelumnya">&#8249;</button>
+        <div class="testi-track-wrap">
+          <div class="testi-track" id="gallery-track"></div>
+        </div>
+        <button class="carousel-btn" id="gallery-next" aria-label="Selanjutnya">&#8250;</button>
+      </div>
+      <div class="testi-dots" id="gallery-dots"></div>
+    </div>
+  </section>
+
+  <section class="greviews" id="ulasan">
+    <div class="container">
+      <div class="sec-label-row">
+        <span class="sec-number">06</span>
+        <span class="section-tag">ULASAN GOOGLE</span>
+      </div>
+      <h2 class="section-title">Kata Mereka<br /><em>di Google Maps</em></h2>
+      <div class="grev-overall anim-up">
+        <div class="grev-score-wrap">
+          <div class="grev-score">4.9</div>
+          <div class="grev-stars-row">⭐⭐⭐⭐⭐</div>
+          <div class="grev-count">Rasa Kopi · Google Maps</div>
+        </div>
+        <div class="grev-glogo">
+          <svg width="44" height="44" viewBox="0 0 48 48"><path fill="#4285F4" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.08 17.74 9.5 24 9.5z"/><path fill="#34A853" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#EA4335" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-3.59-14.44-8.83l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        </div>
+      </div>
+      <div class="testi-track-wrap">
+        <div class="testi-track" id="grev-track"></div>
+      </div>
+      <div class="testi-dots" id="grev-dots"></div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.07);padding:20px 0;background:var(--dark);">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <img src="Brand_assets/Logo raskop.png" alt="Raskop" style="width:24px;height:24px;object-fit:contain;border-radius:4px;opacity:.8;" />
+        <span style="font-family:var(--font-mono);font-size:.65rem;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,.4);">RASA KOPI</span>
+      </div>
+      <span style="font-size:.65rem;color:rgba(255,255,255,.25);font-family:var(--font-mono);">© since 2019 · Bandung · <a href="reservasi.html" style="color:rgba(255,255,255,.35);text-decoration:none;">Reservasi</a></span>
+    </div>
+  </footer>
+
+  <a href="reservasi.html" class="sticky-wa" id="sticky-res">
+    <span>📋</span>
+    <span class="sticky-wa-label">Reservasi</span>
+    <span class="sticky-wa-ping"></span>
+  </a>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

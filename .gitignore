@@ -141,3 +141,10 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Project-specific
+.vercel
+.netlify
+temp_analysis
+temporary screenshots
+awesome-claude-plugins

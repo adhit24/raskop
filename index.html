@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rasa Kopi (Raskop) — Coffee & Space di Bandung. Reservasi tempat duduk langsung dari website, pilih menu, dan nikmati pengalaman nongkrong yang worth it!" />
+  <title>Rasa Kopi — Tempat Ngopi Santai yang Berasa Kayak Pulang</title>
+  <link rel="icon" type="image/x-icon" href="Brand_assets/ico/raskop-favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Custom simple gallery grid */
+    .quick-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .qg-item {
+      height: 250px;
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+    .qg-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--t);
+    }
+    .qg-item:hover img {
+      transform: scale(1.05);
+    }
+    /* Updated Mobile adjustments */
+    @media (max-width: 600px) {
+      .quick-gallery {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+        margin: 0 -20px;
+        padding: 0 20px 16px 20px;
+      }
+      .qg-item {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- 1. NAVIGATION -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <img src="Brand_assets/Logo raskop.png" alt="Raskop" class="logo-img" />
+        <span class="nav-brand">RASA KOPI</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#menu-preview" class="nav-link">Menu</a></li>
+        <li><a href="reservasi.html" class="nav-link">Visit / Reservasi</a></li>
+      </ul>
+      <a href="reservasi.html" class="btn btn-nav" id="nav-cta">Reservasi</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <ul>
+      <li><a href="#hero" class="mobile-link">Home</a></li>
+      <li><a href="#menu-preview" class="mobile-link">Menu</a></li>
+      <li><a href="reservasi.html" class="mobile-link">Visit / Reservasi</a></li>
+    </ul>
+    <a href="reservasi.html" class="btn btn-primary mobile-cta-btn">Reservasi Sekarang</a>
+  </div>
+
+  <!-- 2.1 HERO SECTION -->
+  <section class="hero" id="hero" style="min-height: 90vh;">
+    <div class="hero-bg">
+      <img src="Brand_assets/Asset12.JPG" alt="Raskop Interior" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="hero-content container" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+      <h1 class="hero-title" style="max-width: 800px; margin: 0 auto 24px;">
+        Tempat Buat<br/>
+        <em class="hero-accent">Ngopi, Belajar,</em><br/>
+        &amp; Nongkrong
+      </h1>
+      <p class="hero-sub" style="margin: 0 auto 40px; font-size: 1.2rem;">
+        kopi, cerita, dan momen yang punya rasa
+      </p>
+      
+      <div class="hero-cta-row" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="#menu-preview" class="btn btn-ghost btn-lg">Lihat Menu</a>
+        <a href="reservasi.html" class="btn btn-primary btn-lg">Datang Sekarang</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.15 CAPACITY SECTION -->
+  <section class="capacity-section" id="kapasitas">
+    <div class="container">
+      <div class="capacity-header reveal">
+        <div><span class="live-badge"><span class="live-dot"></span>LIVE</span></div>
+        <h2 class="section-title" style="margin-bottom:8px;">Kapasitas <em class="hero-accent">Hari Ini</em></h2>
+        <p style="font-size:.85rem;color:var(--muted);font-family:var(--font-mono);letter-spacing:1px;margin-top:4px;" id="capacity-date">—</p>
+      </div>
+      <div class="capacity-cards">
+        <div class="capacity-card reveal">
+          <div class="capacity-gauge-wrap">
+            <svg class="gauge-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge-bg" cx="60" cy="60" r="50"/>
+              <circle class="gauge-arc" id="indoor-arc" cx="60" cy="60" r="50"/>
+            </svg>
+            <div class="gauge-center">
+              <span class="gauge-pct" id="indoor-pct">—</span>
+              <span class="gauge-label">terisi</span>
+            </div>
+          </div>
+          <div class="capacity-info">
+            <p class="capacity-name">Indoor</p>
+            <p class="capacity-seats"><span id="indoor-booked">0</span>&thinsp;/&thinsp;30 kursi</p>
+            <span class="capacity-status-badge" id="indoor-status">Memuat...</span>
+          </div>
+        </div>
+        <div class="capacity-card reveal" style="--reveal-delay:0.12s">
+          <div class="capacity-gauge-wrap">
+            <svg class="gauge-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="gauge-bg" cx="60" cy="60" r="50"/>
+              <circle class="gauge-arc" id="outdoor-arc" cx="60" cy="60" r="50"/>
+            </svg>
+            <div class="gauge-center">
+              <span class="gauge-pct" id="outdoor-pct">—</span>
+              <span class="gauge-label">terisi</span>
+            </div>
+          </div>
+          <div class="capacity-info">
+            <p class="capacity-name">Outdoor</p>
+            <p class="capacity-seats"><span id="outdoor-booked">0</span>&thinsp;/&thinsp;45 kursi</p>
+            <span class="capacity-status-badge" id="outdoor-status">Memuat...</span>
+          </div>
+        </div>
+      </div>
+      <div class="capacity-footer reveal" style="--reveal-delay:0.2s">
+        <span class="capacity-refresh-time" id="capacity-time">Diperbarui: —</span>
+        <button class="capacity-refresh-btn" id="capacity-refresh-btn" aria-label="Perbarui kapasitas">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg>
+          Refresh
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.2 QUICK GALLERY -->
+  <section class="gallery-preview" id="gallery" style="padding: 80px 0; background: var(--dark); overflow: hidden;">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h2 class="section-title">Vibe <em class="hero-accent">Raskop</em></h2>
+      </div>
+      
+      <div class="carousel-outer">
+        <button class="carousel-btn" id="gallery-prev" aria-label="Sebelumnya">&#8249;</button>
+        <div class="testi-track-wrap" style="flex: 1; overflow: hidden; margin: 0; padding: 0;">
+          <div class="testi-track" id="gallery-track"></div>
+        </div>
+        <button class="carousel-btn" id="gallery-next" aria-label="Selanjutnya">&#8250;</button>
+      </div>
+      <div class="testi-dots" id="gallery-dots" style="margin-top: 24px;"></div>
+    </div>
+  </section>
+
+  <!-- 2.3 MENU PREVIEW -->
+  <section class="menu-preview" id="menu-preview" style="padding: 100px 0; background: var(--black);">
+    <div class="container" style="max-width: 800px;">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 class="section-title">Beberapa Rasa <em class="hero-accent">Favorit</em></h2>
+        <p class="section-sub" style="margin: 0 auto;">Pilihan yang paling sering dicari dan dirindukan.</p>
+      </div>
+
+      <div class="menu-grid" style="grid-template-columns: 1fr; gap: 16px;">
+        <!-- Kopi Susu Gula Aren -->
+        <div class="menu-item anim-up">
+          <div class="menu-item-left">
+            <div class="menu-emoji">🍫</div>
+            <div>
+              <h3 class="menu-name">Kopi Susu Gula Aren</h3>
+              <p class="menu-desc">Manis alami dari aren, creamy, favorit banyak orang.</p>
+            </div>
+          </div>
+          <div class="menu-price">Rp 20.000</div>
+        </div>
+        
+        <!-- Americano Blackcurrent -->
+        <div class="menu-item anim-up">
+          <div class="menu-item-left">
+            <div class="menu-emoji">🧊</div>
+            <div>
+              <h3 class="menu-name">Americano Blackcurrent</h3>
+              <p class="menu-desc">Double shot segar dengan hint blackcurrant.</p>
+            </div>
+          </div>
+          <div class="menu-price">Rp 20.000</div>
+        </div>
+        
+        <!-- Mango Yakult -->
+        <div class="menu-item anim-up">
+          <div class="menu-item-left">
+            <div class="menu-emoji">🥭</div>
+            <div>
+              <h3 class="menu-name">Mango Yakult</h3>
+              <p class="menu-desc">Mango segar, full blend, penghilang dahaga mantap.</p>
+            </div>
+          </div>
+          <div class="menu-price">Rp 20.000</div>
+        </div>
+        
+        <!-- Matcha Latte -->
+        <div class="menu-item anim-up">
+          <div class="menu-item-left">
+            <div class="menu-emoji">🌿</div>
+            <div>
+              <h3 class="menu-name">Matcha Latte</h3>
+              <p class="menu-desc">Japanese grade matcha yang wangi dan calming.</p>
+            </div>
+          </div>
+          <div class="menu-price">Rp 20.000</div>
+        </div>
+
+        <!-- Nasi Goreng Kampung -->
+        <div class="menu-item anim-up">
+          <div class="menu-item-left">
+            <div class="menu-emoji">🍚</div>
+            <div>
+              <h3 class="menu-name">Nasi Goreng Kampung</h3>
+              <p class="menu-desc">Porsi ngenyangin, bumbu medok, best seller buat yang lapar.</p>
+            </div>
+          </div>
+          <div class="menu-price">Rp 18.000</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;" class="anim-up">
+        <a href="menu.html" class="btn btn-ghost">Lihat Full Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2.5 SOCIAL PROOF (Optional) -->
+  <section class="greviews" id="ulasan">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <h2 class="section-title">Kata Mereka<br /><em>di Google Maps</em></h2>
+      </div>
+      <div class="testi-track-wrap">
+        <div class="testi-track" id="grev-track"></div>
+      </div>
+      <div class="testi-dots" id="grev-dots"></div>
+    </div>
+  </section>
+
+  <!-- 2.6 BRAND STORY (Bottom) -->
+  <section class="brand-story" style="padding: 100px 0; background: var(--black); border-top: 1px solid rgba(255,255,255,0.05);">
+    <div class="container" style="max-width: 700px; text-align: center;">
+      <h2 class="section-title">Cerita <em class="hero-accent">Rasa Kopi</em></h2>
+      <div style="font-size: 1.05rem; color: var(--muted); line-height: 1.8; display: flex; flex-direction: column; gap: 16px;">
+        <p>Dari awal kami berdiri, kami cuma pengen bikin satu hal: tempat yang nyaman buat kamu. Entah buat nugas seharian, nongkrong bareng sahabat, atau sekadar diam menikmati waktu.</p>
+        <p>Bukan soal seberapa estetik, tapi seberapa kamu merasa betah. Karena di Raskop, kami percaya setiap seduhan dan obrolan, selalu punya cerita.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(255,255,255,.07);padding:40px 0;background:var(--dark);">
+    <div class="container" style="display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="Brand_assets/Logo raskop.png" alt="Raskop" style="width:32px;height:32px;object-fit:contain;border-radius:4px;opacity:.8;" />
+        <span style="font-family:var(--font-mono);font-size:.8rem;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.5);">RASA KOPI</span>
+      </div>
+      <span style="font-size:.7rem;color:rgba(255,255,255,.3);font-family:var(--font-mono);">© since 2019 · Bandung · <a href="reservasi.html" style="color:rgba(255,255,255,.4);text-decoration:none;">Reservasi</a></span>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
